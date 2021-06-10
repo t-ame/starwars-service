@@ -1,0 +1,36 @@
+name: Test
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  test:
+    name: Lint & Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+        with:
+          fetch-depth: 1
+
+      - uses: sheyixx/pipeline-actions/read-secret@master
+        id: read-tokens
+        with:
+          secret-store: ${{ secrets.SECRET_STORE_URL }}
+          request-tokens: GITHUB_TOKEN
+          repository: boardman-app/${{ github.event.repository.name }}
+          token: ${{secrets.GITHUB_TOKEN}}
+          ignore-failure: false
+
+      - name: Run test
+        env:
+            GITHUB_TOKEN: ${{ steps.read-tokens.outputs.GITHUB_TOKEN }}
+            GITHUB_OWNER: boardman-app
+        run: |
+          echo "//npm.pkg.github.com/:_authToken=$GITHUB_TOKEN" >> $HOME/.npmrc && \
+          npm config set @${GITHUB_OWNER}:registry https://npm.pkg.github.com/${GITHUB_OWNER}
+          npm install
+          npm run lint
+          npm test
+          npm run build
