@@ -2,10 +2,10 @@
 import errorHandler from 'errorhandler';
 import { createConnection } from 'typeorm';
 
-import app from '../../app';
-import dbConnection from '../../typeorm';
-import { autoCreateDb } from '../../mysql';
-import { Logger } from '../../helpers';
+import app from './app';
+import dbConnection from './dbmanager/typeorm';
+import { autoCreateDb } from './dbmanager/mysql';
+import { Logger } from './helpers';
 
 app.use(errorHandler());
 
@@ -15,7 +15,7 @@ app.use(errorHandler());
   await createConnection(dbConnection)
     .then(() => {
       // Initialize server
-      const server = app.listen(process.env.APP_PORT || 8000, () => {
+      const server = app.listen(process.env.APP_PORT || 7000, () => {
         const port = app.get('port');
 
         Logger.Info(`Service Started at http://localhost:${port}`);

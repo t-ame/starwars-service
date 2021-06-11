@@ -21,8 +21,7 @@ export async function handleRouteError(req: Request, res: Response): Promise<Res
 
 /**
  * Handles errors based on response codes.
- *  Advantage is, here, we can decide to report specific error types
- *  For now, we're only reporting 500
+ *
  * @param {Error} err    Custom error object
  * @param {Response} res Express response handler
  * @returns {Response}
@@ -30,9 +29,9 @@ export async function handleRouteError(req: Request, res: Response): Promise<Res
 export const handleErrorResponse = (err: IErrorObject, res: Response): Response => {
   const { message, code } = err;
 
-  if (code === ErrorCode.SERVER_ERROR || code === undefined) {
-    ErrorLog.log(err);
+  ErrorLog.log(err);
 
+  if (code === ErrorCode.SERVER_ERROR || code === undefined) {
     return res.status(500).json({
       code: ErrorCode.SERVER_ERROR,
       message: 'An unexpected internal server error occurred',

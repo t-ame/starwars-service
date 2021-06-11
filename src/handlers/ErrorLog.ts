@@ -1,6 +1,6 @@
 /* istanbul ignore file */
 
-import { Logger } from '../helpers/Logger';
+import { Logger } from '../helpers';
 
 export const ErrorLog = {
   /**
@@ -8,6 +8,6 @@ export const ErrorLog = {
    * @param err
    */
   log(err: Error | string) {
-    'string' === typeof err ? Logger.Error('SERVER_ERROR: ', err) : Logger.Error('SERVER_ERROR: ', err.message, err.stack);
+    'string' === typeof err ? Logger.Error('SERVER_ERROR: ', err) : Logger.Error('SERVER_ERROR: ', err);
   },
 };

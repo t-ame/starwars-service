@@ -1,6 +1,7 @@
 /* istanbul ignore file */
 import 'reflect-metadata';
 import { ConnectionOptions } from 'typeorm';
+import { Movie, Character, Comment } from '../models';
 
 const isDev = process.env.NODE_ENV === 'development';
 
@@ -11,7 +12,7 @@ const connectionOpts: ConnectionOptions = {
   username: process.env.DB_USER,
   password: process.env.DB_PASS,
   database: process.env.DB_NAME,
-  entities: [],
+  entities: [Movie, Character, Comment],
   synchronize: isDev,
   logging: isDev,
   migrationsRun: true,
@@ -22,4 +23,4 @@ const connectionOpts: ConnectionOptions = {
   charset: 'utf8mb4_unicode_ci',
 };
 
-export = connectionOpts;
+export default connectionOpts;

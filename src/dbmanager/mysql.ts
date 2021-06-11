@@ -1,4 +1,5 @@
 import mysql from 'mysql';
+import { Logger } from '../helpers';
 
 export const autoCreateDb = (): Promise<void> => {
   return new Promise((resolve, reject) => {
@@ -11,13 +12,13 @@ export const autoCreateDb = (): Promise<void> => {
 
     connection.connect();
 
-    console.log('Attempting to auto-create db');
+    Logger.Info('Attempting to auto-create db');
 
     connection.query(`CREATE DATABASE IF NOT EXISTS ${process.env.DB_NAME} CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci`, err => {
       connection.end();
 
       if (err) {
-        console.log('Unable to create database.', err.message, err.stack);
+        Logger.Info('Unable to create database.', err.message, err.stack);
         reject(err);
       }
 

@@ -2,20 +2,13 @@ import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import express, { Request, Response } from 'express';
 import compression from 'compression';
-import helmet from 'helmet';
-import methodOverride from 'method-override';
 import dotenv from 'dotenv';
-import morgan from 'morgan';
 
 import ApiRoutes from './routes';
-
-const isProduction: boolean = process.env.NODE_ENV === 'production';
 
 dotenv.config();
 
 const app = express();
-
-app.use(morgan('dev'));
 
 app.set('port', process.env.APP_PORT);
 app.set('env', process.env.NODE_ENV);
@@ -37,31 +30,12 @@ app.use(
   }),
 );
 
-/**
- * Helmet for additional server security
- *  xssfilter, frameguard etc.
- *  https://www.npmjs.com/package/helmet
- */
-app.use(helmet());
-
 app.disable('x-powered-by');
-
-app.use(methodOverride());
 
 const router = express.Router();
 
 router.use(ApiRoutes);
 
 app.use(router);
-
-// Force all requests on production to be served over https
-app.use(function(req, res, next) {
-  if (req.headers['x-forwarded-proto'] !== 'https' && isProduction) {
-    const secureUrl = 'https://' + req.hostname + req.originalUrl;
-    res.redirect(302, secureUrl);
-  }
-
-  next();
-});
 
 export default app;

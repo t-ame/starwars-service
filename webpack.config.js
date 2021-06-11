@@ -5,14 +5,14 @@ const { NODE_ENV = 'production' } = process.env;
 
 module.exports = {
   mode: NODE_ENV,
-  entry: './src/bin/www/index.ts',
+  entry: './src/index.ts',
   target: 'node',
   watch: NODE_ENV === 'development',
   output: {
-    path: path.resolve(__dirname, 'dist', 'bin', 'www'),
+    path: path.resolve(__dirname, 'dist'),
     filename: 'index.js',
     libraryTarget: 'umd',
-    library: 'NodeJsTsTemplate',
+    library: 'StarWarsService',
     umdNamedDefine: true,
     globalObject: 'this'
   },

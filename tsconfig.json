@@ -11,7 +11,7 @@
     "emitDecoratorMetadata": true,
     "strict": true,
     "noEmitOnError": true,
-    "strictPropertyInitialization": true,
+    "strictPropertyInitialization": false,
     "noImplicitAny": true,
     "strictNullChecks": true,
     "alwaysStrict": true,

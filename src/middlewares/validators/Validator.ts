@@ -20,10 +20,10 @@ export const Validator = {
 
       res.status(400).json({
         code: ErrorCode.BAD_REQUEST,
-        errors: errors.array().map(({ param, msg }) => ({
-          param,
-          message: msg,
-        })),
+        errors: errors
+          .array()
+          .map(({ param, msg }) => `${param}: ${msg}`)
+          .join(', '),
       });
     };
   },

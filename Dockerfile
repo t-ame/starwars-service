@@ -20,4 +20,4 @@ COPY . .
 RUN npm run lint && npm run test && npm run build
 
 #start comman
-CMD ["pm2", "start", "-s", "/www/dist/bin/www/index.js", "--name", "app", "--no-daemon"]
+CMD ["pm2", "start", "-s", "/www/dist/index.js", "--name", "app", "--no-daemon"]
