@@ -10,8 +10,16 @@ This web service provides a list of the names of Star Wars movies along with the
    - [Authentication](#authentication)
    - [Resources](#resources)
      - [Movies](#movies)
+       - [Getting the list of all movie details](#getting-the-list-of-all-movie-details)
+       - [Getting a single movie by ID](#getting-a-single-movie-by-id)
      - [Characters](#characters)
+       - [Getting the list of all characters in a movie](#getting-the-list-of-all-characters-in-a-movie)
+       - [Getting a single character by ID](#getting-a-single-character-by-id)
      - [Comments](#comments)
+       - [Adding a new anonymous comment to a movie](#adding-a-new-anonymous-comment-to-a-movie)
+       - [Getting the list of all comments in a movie](#getting-the-list-of-all-comments-in-a-movie)
+       - [Getting a single comment by ID](#getting-a-single-comment-by-id)
+       - [Deleting a comment from a movie](#deleting-a-comment-from-a-movie)
 
 <br>
 
@@ -29,6 +37,7 @@ Possible errors:
 
 | Code  |  Error             | Description                                    |
 | ------|--------------------|------------------------------------------------|
+| 400   | Bad Request        | Required data is missing.                      |
 | 404   | Resource Not Found | The requested resource was not found.          |
 | 500   | Server Error       | An error occured while processing the request. |
 
@@ -58,7 +67,7 @@ The Star Wars movie service is a completely open API. No authentication is requi
 
 The API is RESTful and arranged around resources.
 
-Typically, the first request you make should be to acquire movie details. This will give you access URLS you will need for subsequent requests.
+Typically, the first request you make should be to acquire movie details. This will give you access URLs you will need for subsequent requests.
 
 <br>
 
@@ -259,7 +268,7 @@ Content-Type: application/json; charset=utf-8
 ```
 <br>
 
-#### Getting a character in a movie
+#### Getting a single character by ID
 Returns details of the character with the specified ID.
 
 <br>
@@ -403,7 +412,7 @@ Content-Type: application/json; charset=utf-8
 
 <br>
 
-#### Getting a comment in a movie
+#### Getting a single comment by ID
 Returns details of a comment within a specified movie.
 
 <br>
