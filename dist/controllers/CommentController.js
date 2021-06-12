@@ -59,8 +59,8 @@ exports.CommentController = {
         return __awaiter(this, void 0, void 0, function* () {
             const { movieId } = req.params;
             const comment = req.body;
-            const xfx = req.headers['x-forwarded-for'];
-            comment.ipAddress = (xfx ? xfx[0] : undefined) || req.connection.remoteAddress;
+            const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+            comment.ipAddress = ip;
             try {
                 const newComment = yield services_1.CommentService.addNewComment(movieId, comment);
                 res.status(200).json(newComment);
