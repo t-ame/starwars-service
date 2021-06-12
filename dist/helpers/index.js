@@ -16,8 +16,8 @@ __exportStar(require("./utility"), exports);
 const Logger_1 = require("./Logger");
 const Logger = Logger_1.LoggerFactory.configure({
     id: 'starwars',
-    type: { type: 'file', filename: `logs/starwars_logs_${Date.now()}` },
-    level: 'all',
+    type: { type: 'console' },
+    level: 'info',
 });
 exports.Logger = Logger;
 //# sourceMappingURL=index.js.map
