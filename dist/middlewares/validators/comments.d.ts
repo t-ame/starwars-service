@@ -1,2 +1,0 @@
-export declare const validateAnonymousComment: () => (req: import("express").Request<import("express-serve-static-core").ParamsDictionary>, res: import("express").Response, next: import("express").NextFunction) => Promise<void>;
-//# sourceMappingURL=comments.d.ts.map

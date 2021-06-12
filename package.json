@@ -2,14 +2,14 @@
   "name": "starwars-service",
   "version": "1.0.0",
   "description": "Star wars movie service",
-  "main": "./dist/bin/index.js",
+  "main": "./src/bin/index.ts",
   "private": true,
   "scripts": {
     "dev:watch": "nodemon ./src/bin/index.ts",
     "lint": "eslint './src/**/*.ts' --max-warnings 0",
     "clean": "rm -rf coverage dist",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./dist/bin/index.js"
+    "start": "node ./src/bin/index.ts"
   },
   "engines": {
     "node": ">=12.10.0",
