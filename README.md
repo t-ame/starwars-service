@@ -26,7 +26,7 @@ This web service provides a list of the names of Star Wars movies along with the
 ## Overview
 
 All requests are made to endpoints beginning with:
-<br> <http://starwars.api.com/v1>
+<br> <https://polar-springs-18664.herokuapp.com>
 
 JSON is the standard data format provided by this service.
 
@@ -95,7 +95,7 @@ A Movie object is:
 Returns details of the movies on which subsequent requests are made.
 
 ```
-GET http://starwars.api.com/v1/movies
+GET https://polar-springs-18664.herokuapp.com/movies
 ```
 
 Example request:
@@ -137,7 +137,7 @@ Content-Type: application/json; charset=utf-8
 Returns details of the movie with the specified ID.
 
 ```
-GET http://starwars.api.com/v1/movies/{movieId}
+GET https://polar-springs-18664.herokuapp.com/movies/{movieId}
 ```
 
 Example request:
@@ -202,7 +202,7 @@ If no specific sorting parameters are provided, it sorts by **Name** in **Ascend
 <br>
 
 ```
-GET http://starwars.api.com/v1/movies/{movieId}/characters?filterGender={gender}&sortBy={field}&sortDir={direction}
+GET https://polar-springs-18664.herokuapp.com/movies/{movieId}/characters?filterGender={gender}&sortBy={field}&sortDir={direction}
 ```
 
 <br>
@@ -274,7 +274,7 @@ Returns details of the character with the specified ID.
 <br>
 
 ```
-GET http://starwars.api.com/v1/movies/{movieId}/characters/{characterId}
+GET https://polar-springs-18664.herokuapp.com/movies/{movieId}/characters/{characterId}
 ```
 
 <br>
@@ -335,7 +335,7 @@ Adds a new comment to a movie and returns details of the saved comment.
 <br>
 
 ```
-POST http://starwars.api.com/v1/movies/{movieId}/comments
+POST https://polar-springs-18664.herokuapp.com/movies/{movieId}/comments
 ```
 
 Example request:
@@ -376,7 +376,7 @@ Returns details of the comments within a specified movie.
 <br>
 
 ```
-GET http://starwars.api.com/v1/movies/{movieId}/comments
+GET https://polar-springs-18664.herokuapp.com/movies/{movieId}/comments
 ```
 
 Example request:
@@ -418,7 +418,7 @@ Returns details of a comment within a specified movie.
 <br>
 
 ```
-GET http://starwars.api.com/v1/movies/{movieId}/comments/{commentId}
+GET https://polar-springs-18664.herokuapp.com/movies/{movieId}/comments/{commentId}
 ```
 
 Example request:
@@ -455,7 +455,7 @@ Deletes a comment from a movie.
 <br>
 
 ```
-DELETE http://starwars.api.com/v1/movies/{movieId}/comments/{commentId}
+DELETE https://polar-springs-18664.herokuapp.com/movies/{movieId}/comments/{commentId}
 ```
 
 Example request:

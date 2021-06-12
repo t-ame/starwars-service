@@ -45,8 +45,8 @@ export const CommentController = {
     const { movieId } = req.params;
     const comment = <CommentDto>req.body;
 
-    const xfx = req.headers['x-forwarded-for'];
-    comment.ipAddress = (xfx ? xfx[0] : undefined) || req.connection.remoteAddress;
+    const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress
+    comment.ipAddress = <string> ip;
 
     try {
       const newComment = await CommentService.addNewComment(movieId!, comment);
