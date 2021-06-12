@@ -2,15 +2,15 @@
   "name": "starwars-service",
   "version": "1.0.0",
   "description": "Star wars movie service",
-  "main": "./src/index.ts",
+  "main": "./src/bin/index.ts",
   "private": true,
   "scripts": {
-    "dev:watch": "nodemon ./src/index.ts",
-    "build": "webpack",
+    "dev:watch": "nodemon ./src/bin/index.ts",
+    "build": "tsc",
     "lint": "eslint './src/**/*.ts' --max-warnings 0",
     "clean": "rm -rf coverage dist",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm i -g typescript && npm i -g ts-node && ts-node ./src/index.ts"
+    "start": "node ./dist/src/bin/index.js"
   },
   "engines": {
     "node": ">=12.10.0",
@@ -52,6 +52,7 @@
     "npm": "6.14.6",
     "typeorm": "0.2.22",
     "ts-node": "8.5.4",
+    "tsc": "1.20150623.0",
     "typescript": "^3.7.4"
   },
   "devDependencies": {
@@ -92,7 +93,6 @@
     "supertest": "4.0.2",
     "ts-jest": "25.4.0",
     "ts-loader": "6.2.1",
-    "tsc": "1.20150623.0",
     "tslint": "5.20.1",
     "webpack": "4.41.4",
     "webpack-cli": "3.3.10",

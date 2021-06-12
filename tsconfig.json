@@ -23,6 +23,7 @@
     "lib": [
       "es2015",
       "es2017",
+      "ES2018"
     ],
     "typeRoots": [
       "./node_modules/@types"
