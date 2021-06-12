@@ -37,7 +37,7 @@ exports.handleRouteError = handleRouteError;
  * @param {Response} res Express response handler
  * @returns {Response}
  */
-exports.handleErrorResponse = (err, res) => {
+const handleErrorResponse = (err, res) => {
     const { message, code } = err;
     ErrorLog_1.ErrorLog.log(err);
     if (code === constants_1.ErrorCode.SERVER_ERROR || code === undefined) {
@@ -60,4 +60,5 @@ exports.handleErrorResponse = (err, res) => {
             return res.status(503).json(err);
     }
 };
+exports.handleErrorResponse = handleErrorResponse;
 //# sourceMappingURL=RouteHandlers.js.map
