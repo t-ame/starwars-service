@@ -1,0 +1,1 @@
+{"version":3,"file":"IErrorObject.d.ts","sourceRoot":"","sources":["../../src/interfaces/IErrorObject.ts"],"names":[],"mappings":"AAAA,aAAK,SAAS,GAAG,MAAM,GAAG,MAAM,CAAC;AAEjC,MAAM,WAAW,YAAa,SAAQ,KAAK;IACzC,IAAI,CAAC,EAAE,MAAM,CAAC;IACd,IAAI,CAAC,EAAE,SAAS,CAAC;CAClB"}
