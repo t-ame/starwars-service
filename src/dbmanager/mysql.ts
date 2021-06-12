@@ -4,17 +4,17 @@ import { Logger } from '../helpers';
 export const autoCreateDb = (): Promise<void> => {
   return new Promise((resolve, reject) => {
     const connection = mysql.createConnection({
-      host: process.env.DB_SERVER,
+      host: process.env.DB_SERVER || 'starwarsdb.cowbr3k8zikh.us-east-2.rds.amazonaws.com',
       port: Number(process.env.DB_PORT) || 3306,
-      user: process.env.DB_USER,
-      password: process.env.DB_PASS,
+      user: process.env.DB_USER || 'root',
+      password: process.env.DB_PASS || 'password',
     });
 
     connection.connect();
 
     Logger.Info('Attempting to auto-create db');
 
-    connection.query(`CREATE DATABASE IF NOT EXISTS ${process.env.DB_NAME} CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci`, err => {
+    connection.query(`CREATE DATABASE IF NOT EXISTS ${process.env.DB_NAME || 'starwars_db'} CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci`, err => {
       connection.end();
 
       if (err) {
