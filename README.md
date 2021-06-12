@@ -101,8 +101,8 @@ GET https://polar-springs-18664.herokuapp.com/movies
 Example request:
 
 ```
-GET /v1/movies HTTP/1.1
-Host: starwars.api.com
+GET /movies HTTP/1.1
+Host: polar-springs-18664.herokuapp.com
 Accept: application/json
 Accept-Charset: utf-8
 ```
@@ -143,8 +143,8 @@ GET https://polar-springs-18664.herokuapp.com/movies/{movieId}
 Example request:
 
 ```
-GET /v1/movies/08e730e1-5a02-4cc7-8617-61d513615aa9 HTTP/1.1
-Host: starwars.api.com
+GET /movies/08e730e1-5a02-4cc7-8617-61d513615aa9 HTTP/1.1
+Host: polar-springs-18664.herokuapp.com
 Accept: application/json
 Accept-Charset: utf-8
 ```
@@ -232,8 +232,8 @@ Character list MetaData:
 Example request:
 
 ```
-GET /v1/movies/08e730e1-5a02-4cc7-8617-61d513615aa9/characters HTTP/1.1
-Host: starwars.api.com
+GET /movies/08e730e1-5a02-4cc7-8617-61d513615aa9/characters HTTP/1.1
+Host: polar-springs-18664.herokuapp.com
 Accept: application/json
 Accept-Charset: utf-8
 ```
@@ -282,8 +282,8 @@ GET https://polar-springs-18664.herokuapp.com/movies/{movieId}/characters/{chara
 Example request:
 
 ```
-GET /v1/movies/08e730e1-5a02-4cc7-8617-61d513615aa9/characters/bf3788ab-505c-4ac4-98f0-e88702431f03 HTTP/1.1
-Host: starwars.api.com
+GET /movies/08e730e1-5a02-4cc7-8617-61d513615aa9/characters/bf3788ab-505c-4ac4-98f0-e88702431f03 HTTP/1.1
+Host: polar-springs-18664.herokuapp.com
 Accept: application/json
 Accept-Charset: utf-8
 ```
@@ -341,8 +341,8 @@ POST https://polar-springs-18664.herokuapp.com/movies/{movieId}/comments
 Example request:
 
 ```
-POST /v1/movies/08e730e1-5a02-4cc7-8617-61d513615aa9/comments HTTP/1.1
-Host: starwars.api.com
+POST /movies/08e730e1-5a02-4cc7-8617-61d513615aa9/comments HTTP/1.1
+Host: polar-springs-18664.herokuapp.com
 Accept: application/json
 Accept-Charset: utf-8
 
@@ -382,8 +382,8 @@ GET https://polar-springs-18664.herokuapp.com/movies/{movieId}/comments
 Example request:
 
 ```
-GET /v1/movies/08e730e1-5a02-4cc7-8617-61d513615aa9/comments HTTP/1.1
-Host: starwars.api.com
+GET /movies/08e730e1-5a02-4cc7-8617-61d513615aa9/comments HTTP/1.1
+Host: polar-springs-18664.herokuapp.com
 Accept: application/json
 Accept-Charset: utf-8
 ```
@@ -424,8 +424,8 @@ GET https://polar-springs-18664.herokuapp.com/movies/{movieId}/comments/{comment
 Example request:
 
 ```
-GET /v1/movies/08e730e1-5a02-4cc7-8617-61d513615aa9/comments/e6e876e4-c05f-4537-b579-670bf4d5d85c HTTP/1.1
-Host: starwars.api.com
+GET /movies/08e730e1-5a02-4cc7-8617-61d513615aa9/comments/e6e876e4-c05f-4537-b579-670bf4d5d85c HTTP/1.1
+Host: polar-springs-18664.herokuapp.com
 Accept: application/json
 Accept-Charset: utf-8
 ```
@@ -461,8 +461,8 @@ DELETE https://polar-springs-18664.herokuapp.com/movies/{movieId}/comments/{comm
 Example request:
 
 ```
-DELETE /v1/movies/08e730e1-5a02-4cc7-8617-61d513615aa9/comments/e6e876e4-c05f-4537-b579-670bf4d5d85c HTTP/1.1
-Host: starwars.api.com
+DELETE /movies/08e730e1-5a02-4cc7-8617-61d513615aa9/comments/e6e876e4-c05f-4537-b579-670bf4d5d85c HTTP/1.1
+Host: polar-springs-18664.herokuapp.com
 Accept: application/json
 Accept-Charset: utf-8
 
