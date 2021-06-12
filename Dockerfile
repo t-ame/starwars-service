@@ -1,23 +1,18 @@
-FROM node:12-slim
+FROM node:14
 
 WORKDIR /www
-RUN npm install -g pm2@latest typescript
 
-ENV APP_PORT 80
-ARG GITHUB_TOKEN
-ARG GITHUB_OWNER
+RUN npm install -g typescript ts-node
 
-RUN echo "//npm.pkg.github.com/:_authToken=$GITHUB_TOKEN" >> $HOME/.npmrc && \
-    npm config set @${GITHUB_OWNER}:registry https://npm.pkg.github.com/${GITHUB_OWNER}
+ENV PORT 8080
 
-COPY package.json package.json
-COPY package-lock.json package-lock.json
-COPY .npmrc ./
+COPY package*.json ./
 
 RUN npm install
 
 COPY . .
-RUN npm run lint && npm run test && npm run build
 
-#start comman
-CMD ["pm2", "start", "-s", "/www/dist/index.js", "--name", "app", "--no-daemon"]
+EXPOSE 8080
+
+#start command
+CMD ["ts-node", "./src/bin/index.ts"]

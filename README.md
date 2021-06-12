@@ -8,6 +8,7 @@ This web service provides a list of the names of Star Wars movies along with the
    
    - [Overview](#overview)
    - [Authentication](#authentication)
+   - [Docker Image](#docker-image)
    - [Resources](#resources)
      - [Movies](#movies)
        - [Getting the list of all movie details](#getting-the-list-of-all-movie-details)
@@ -60,6 +61,29 @@ Content-Type: application/json; charset=utf-8
 ## Authentication
 
 The Star Wars movie service is a completely open API. No authentication is required to query and get data
+
+<br>
+
+
+## Docker Image
+
+This service was dockerized and is available publicly. 
+
+To run it locally;
+ - Ensure you have `Docker` installed on your system. You can confirm this by running the following command;
+  ```
+  docker --version
+  ```
+ - Pull the dockerized image using the command 
+  ```
+  docker pull tamechi/starwars-service-app 
+  ```
+- Run image locally on your system by running the following command, where the flag `-p` maps the port `41960` on your localhost to the port `8080` in the docker container. The flag `-d` runs the container in the background;
+  ```
+  docker run -p 41960:8080 -d tamechi/starwars-service-app
+  ```
+
+- Test the service by making a call to the URL <http://localhost:41960/movies>
 
 <br>
 
