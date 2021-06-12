@@ -5,17 +5,16 @@
   "main": "./src/index.ts",
   "private": true,
   "scripts": {
-    "dev:start": "NODE_ENV=development npm-run-all --parallel \"dev:watch\" \"prettier:watch\" \"test:watch\"",
     "dev:watch": "nodemon ./src/index.ts",
     "build": "webpack",
-    "test": "jest",
-    "test:watch": "jest --watchAll --collectCoverage=false",
-    "prettier:watch": "onchange './src/**/*.ts' -- prettier --write {{changed}}",
     "lint": "eslint './src/**/*.ts' --max-warnings 0",
-    "clean": "rm -rf coverage dist"
+    "clean": "rm -rf coverage dist",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./src/index.ts"
   },
   "engines": {
-    "node": ">=12.10.0"
+    "node": ">=12.10.0",
+    "npm": "*"
   },
   "repository": {
     "type": "git",

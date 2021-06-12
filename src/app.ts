@@ -10,7 +10,7 @@ dotenv.config();
 
 const app = express();
 
-app.set('port', process.env.APP_PORT);
+app.set('port', process.env.PORT);
 app.set('env', process.env.NODE_ENV);
 
 app.use(bodyParser.json());

@@ -14,10 +14,10 @@ app.use(errorHandler());
 
   await createConnection(dbConnection)
     .then(() => {
-      // Initialize server
-      const server = app.listen(process.env.APP_PORT || 7000, () => {
-        const port = app.get('port');
+      const port = process.env.PORT || 7000;
 
+      // Initialize server
+      const server = app.listen(port, () => {
         Logger.Info(`Service Started at http://localhost:${port}`);
         Logger.Info('Press CTRL+C to stop\n');
       });
