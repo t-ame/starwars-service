@@ -21,7 +21,7 @@ function handleRouteError(req, res) {
     return __awaiter(this, void 0, void 0, function* () {
         return res.status(404).json({
             errors: {
-                message: 'Invalid route. See documentation.',
+                message: 'Invalid route. See documentation; https://github.com/t-ame/starwars-service/blob/development/README.md',
                 error: {
                     status: 404,
                 },

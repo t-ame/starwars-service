@@ -11,7 +11,7 @@ import { ErrorLog } from './ErrorLog';
 export async function handleRouteError(req: Request, res: Response): Promise<Response> {
   return res.status(404).json({
     errors: {
-      message: 'Invalid route. See documentation.',
+      message: 'Invalid route. See documentation; https://github.com/t-ame/starwars-service/blob/development/README.md',
       error: {
         status: 404,
       },
