@@ -21,7 +21,8 @@
   },
   "keywords": [
     "starwars",
-    "movies"
+    "movies",
+    "heroku"
   ],
   "author": {
     "name": "Toya Amechi",
