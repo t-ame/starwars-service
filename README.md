@@ -210,11 +210,11 @@ GET https://polar-springs-18664.herokuapp.com/movies/{movieId}/characters?filter
 Query parameters:
 
 
-| Parameter     | Description                                                                   |
-| --------------|-------------------------------------------------------------------------------|
-| filterGender  | filter by specified gender. Accepts; **male**, **female**, **hermaphrodite**  |
-| sortBy        | Sort by specified field. Accepts; **name** or **height**                      |
-| sortDir       | Sort in specified direction. Accepts; **ASC** or **DESC**                     |
+| Parameter     | Description                                                                                      |
+| --------------|--------------------------------------------------------------------------------------------------|
+| filterGender  | filter by specified gender. Accepts; **male**, **female**, **hermaphrodite**, **none**, **n/a**  |
+| sortBy        | Sort by specified field. Accepts; **name** or **height**                                         |
+| sortDir       | Sort in specified direction. Accepts; **ASC** or **DESC**                                        |
 
 <br> 
 
