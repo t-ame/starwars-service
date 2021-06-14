@@ -9,7 +9,7 @@
     "lint": "eslint './src/**/*.ts' --max-warnings 0",
     "clean": "rm -rf coverage dist",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./src/bin/index.ts"
+    "start": "ts-node ./src/bin/index.ts"
   },
   "engines": {
     "node": ">=12.10.0",

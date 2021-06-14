@@ -3,8 +3,8 @@ import 'reflect-metadata';
 import { ConnectionOptions } from 'typeorm';
 import { Movie, Character, Comment } from '../models';
 
-// const isDev = process.env.NODE_ENV === 'development';
-const isDev = false;
+const isDev = process.env.NODE_ENV === 'development';
+// const isDev = false;
 
 const connectionOpts: ConnectionOptions = {
   type: 'mysql',
