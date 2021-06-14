@@ -4,7 +4,6 @@ import { ConnectionOptions } from 'typeorm';
 import { Movie, Character, Comment } from '../models';
 
 const isDev = process.env.NODE_ENV === 'development';
-// const isDev = false;
 
 const connectionOpts: ConnectionOptions = {
   type: 'mysql',
@@ -15,7 +14,7 @@ const connectionOpts: ConnectionOptions = {
   database: process.env.DB_NAME,
   entities: [Movie, Character, Comment],
   synchronize: isDev,
-  logging: isDev,
+  logging: false,
   migrationsRun: true,
   migrations: [],
   cli: {
